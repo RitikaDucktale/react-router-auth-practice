@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Form, Navigate, useNavigate,NavLink } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import styles from './all.module.css';
-import TextField from '@mui/material/TextField';
+import {TextField,Button} from '@mui/material';
 const Login = ()=>{
     const navigate = useNavigate();
-    const {loggedInUsers,login} = useAuth(); 
+    const {loggedInUsers,login,isLoggedIn,setIsLoggedIn} = useAuth(); 
     // console.log(users);
     const [loginFormData,setLoginFormData] = useState({
         email:"",
@@ -19,17 +19,16 @@ const Login = ()=>{
     }
     const onSubmitHandler = (e)=>{
         e.preventDefault();
-        console.log(loginFormData)
-        console.log(loggedInUsers)
         const users = JSON.parse(localStorage.getItem('users'))||[];
        const foundUser = users.find(usr=>usr.email === loginFormData.email && usr.password === loginFormData.password)
-        if(foundUser){
-            console.log(foundUser)
-            alert("Login Successful");
-            login(foundUser);
-            navigate('/dashboard');
-            
-            
+        if(foundUser){ 
+            const authUser = {...foundUser,token:true}
+            console.log("login====",authUser)
+            localStorage.setItem('authUser',JSON.stringify(authUser));
+              login(authUser);
+              setIsLoggedIn(true)
+         alert("Login Successful");
+            navigate('/dashboard');   
         }else{
             alert('User not found, please sign up first');
         }
@@ -42,6 +41,7 @@ const Login = ()=>{
                       required
                       id="email"
                       label="Email"
+                      fullWidth
                       onChange={onHandleChange}
                     />
                      <TextField
@@ -49,10 +49,11 @@ const Login = ()=>{
                       id="password"
                       label="Password"
                       type="text"
+                      fullWidth
                       onChange={onHandleChange}
                     />
-                    <button type="submit">Login</button>
-                    <p>Create new account?</p><NavLink to="/">Sign Up</NavLink>
+                    <Button variant="contained" fullWidth type="submit">Login</Button>
+                    <p>Create new account? <NavLink to="/">Sign Up</NavLink></p>
                 </div>
         </form>
         

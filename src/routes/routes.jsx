@@ -8,17 +8,30 @@ import AuthLayout from '../Layout/AuthLayout'
 import Login from '../pages/loginPage'
 import SignUp from '../pages/SignUp'
 import ProtectedRoutes from './protectedRoutes'
+import PublicRoutes from './publicRoutes';
 {console.log("Routes rendered \/")}
 const routes  = createBrowserRouter([
-
     {
-        path:'/',
-        element:<AuthLayout/>,
+        element:<PublicRoutes/>,
         children:[
-            {index:true,element:<SignUp/>},
-            {path:'login',element:<Login/>}
+            {
+                path:'/', 
+                element:<AuthLayout/>,
+                children:[
+                    {index:true,element:<SignUp/>},
+                    {path:'login',element:<Login/>}
+                ]
+            }
         ]
     },
+    // {
+    //     path:'/',
+    //     element:<AuthLayout/>,
+    //             children:[
+    //                 {index:true,element:<SignUp/>},
+    //                 {path:'login',element:<Login/>}
+    //             ]
+    // },
     {
         element:<ProtectedRoutes/>,
         children:[

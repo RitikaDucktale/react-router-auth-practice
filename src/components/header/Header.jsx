@@ -9,15 +9,18 @@ const Header = () => {
   const {user,logout} = useAuth();
   const navigate = useNavigate();
     const onclickHandler = () =>{
-      logout(); 
+      logout();
+        // console.log(loggedInUsers)  
+      localStorage.removeItem('authUser') 
       navigate('/');
+      
     }
-  return (
+  return (  
     <div className={styles.container}>
         <Logo/>
         <Navbar/>
         <div>
-            <Button variant="contained" onClick={onclickHandler}>Log Out</Button>
+            <Button variant="contained" onClick={onclickHandler} className={styles.btn}>Log Out</Button>
         </div>
     </div>
   )

@@ -4,6 +4,7 @@
    margin-top: 200px;
    font-size: 3rem;
 }
+
 .formContainer{
   width: 40vw;
   margin: 50px auto 0;
@@ -11,14 +12,16 @@
   flex-direction: column;
    align-items: center;
    justify-content: center;
-  gap: 20px;
+   gap: 20px;
    background-color:white;
-   padding: 30px;
+   box-shadow: 4px 4px 8px 4px  #94c8da;
+
+   padding: 5%;
    border-radius: 10px;
 }
 .bcolor{
  
 }
 body{
-  background-color: rgb(205, 227, 247);
+  background-color: #AFDCEB;
 }
