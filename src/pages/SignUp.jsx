@@ -1,9 +1,10 @@
 import Box from '@mui/material/Box';
 import {TextField,Button} from '@mui/material';
-import { useState } from 'react';
+import { useState,Suspense } from 'react';
 import { Form, useNavigate ,NavLink} from 'react-router-dom';
 import styles from './all.module.css';
 import { useAuth } from '../auth/AuthContext';
+
 const SignUp = ()=>{
     const navigate = useNavigate();
     const {isLoggedIn,signedUpUsers}= useAuth();
@@ -22,7 +23,8 @@ const SignUp = ()=>{
             signedUpUsers.push(formData)
             console.log(signedUpUsers)
             localStorage.setItem('users',JSON.stringify(signedUpUsers));
-            navigate('/login');
+
+                navigate('/login');
         }
 
     const onHandleChange = (e)=>{

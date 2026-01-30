@@ -3,10 +3,12 @@
     justify-content: space-around;
     align-content: center;
     align-items: baseline;
-    background-color: white;
-    padding: 0.5rem;
+    background-color: #202B3C;
+    padding: 0.5em;
     border-radius: 5px;
-    box-shadow: 4px 4px 8px #90c5d6;
+    /* box-shadow: 4px 4px 8px #90c5d6; */
+    position: sticky;
+    top:0;
 }
 
 .btn{

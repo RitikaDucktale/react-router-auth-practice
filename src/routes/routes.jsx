@@ -1,15 +1,18 @@
-import React from 'react'
+import {Suspense,lazy} from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import Home from '../pages/Home'
-import About from '../pages/About'
+import About from '../pages/users/Users'
 import Contact from '../pages/Contact'
-import MainLayout from '../Layout/MainLayout'
-import AuthLayout from '../Layout/AuthLayout'
+import MainLayout from '../layout/MainLayout'
+import AuthLayout from '../layout/AuthLayout'
 import Login from '../pages/loginPage'
 import SignUp from '../pages/SignUp'
 import ProtectedRoutes from './protectedRoutes'
 import PublicRoutes from './publicRoutes';
+import PageNotFound from '../pages/PageNotFound'
+import RouteError from '../pages/RouteError'
 {console.log("Routes rendered \/")}
+// const Login = lazy(()=> import('../pages/loginPage'))
 const routes  = createBrowserRouter([
     {
         element:<PublicRoutes/>,
@@ -19,8 +22,9 @@ const routes  = createBrowserRouter([
                 element:<AuthLayout/>,
                 children:[
                     {index:true,element:<SignUp/>},
-                    {path:'login',element:<Login/>}
-                ]
+                    {path:'login',element: <Login/> }
+                ],
+                errorElement:<RouteError/>
             }
         ]
     },
@@ -40,7 +44,6 @@ const routes  = createBrowserRouter([
             children:[
                 {
                     index:true,
-                    path:'home',
                     element:<Home/>
                 },
                 {
@@ -53,7 +56,8 @@ const routes  = createBrowserRouter([
                 },
             ]
          }
-        ]
+        ],
+        errorElement:<RouteError/>
     },
     {
         path:'/*',

@@ -3,6 +3,7 @@
    justify-content: center;
    margin-top: 200px;
    font-size: 3rem;
+  
 }
 
 .formContainer{
@@ -14,14 +15,27 @@
    justify-content: center;
    gap: 20px;
    background-color:white;
-   box-shadow: 4px 4px 8px 4px  #94c8da;
+   /* box-shadow: 4px 4px 8px 4px  #94c8da; */
 
    padding: 5%;
    border-radius: 10px;
 }
-.bcolor{
- 
-}
 body{
   background-color: #AFDCEB;
+}
+.home{
+  text-align: justify;
+  font-size:medium;
+  margin-top: 20px;
+  padding: 2em 5em; 
+  color: white;
+  
+}
+.errorElement{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 7em;
+  /* width: 50%; */
 }

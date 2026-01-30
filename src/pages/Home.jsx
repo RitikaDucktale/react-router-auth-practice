@@ -1,7 +1,14 @@
+
 import styles from "./all.module.css";
 const Home = () => {
   return (
-    <div className={styles.container}>Home</div>
+    <div className={styles.home}>Home
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+    Reiciendis non ab culpa! Explicabo corrupti aliquid aspernatur officia amet 
+    odit nam quod, porb odio alias, odit similique ullam, soluta eaque, nihil accusamus error eligendi minus architecto ipsam consectetur sequi dolor excepturi minima hic quas ut? Eum incidunt exercitationem accusantium quas numquam, pariatur voluptas perspiciatis ratione voluptatibus facere commodi aliquam explicabo in odit laborum molestiae nostrum culpa placeat eius beatae modi illo delectus. Quaerat ex animi, iusto architecto in doloremque veniam corporis earum temporibus. In.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus perspiciatis nulla, natus earum alias necessitatibus labore vitae sequi rerum omnis asperiores? Ullam esse nobis similique, veniam magnam natus sequi vitae est odit tempora placeat sit dolore ut! Repellendus at vitae ad laboriosam! Atque corrupti qui inventore mollitia excepturi, recusandae rem eos magnam molestias aliquid saepe accusamus vel consequatur ad explicabo sapiente tempora? Expedita assumenda rerum delectus nisi tenetur facere vel nulla, quasi, tempora est autem dignissimos corrupti maiores temporibus culpa veniam, pariatur nemo magni minus? Dolores soluta sint quod dolor? Libero dolorem labore nobis esse fugit sint possimus ex illo!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam amet obcaecati, quos quod ullam dignissimos similique dolores exercitationem doloremque eligendi soluta corrupti voluptatum est tenetur doloribus minima corporis ducimus rem quo delectus temporibus saepe, modi odit. Officia vel incidunt, veritatis quo dolorem facilis fuga ab dolorum deleniti cumque molestias itaque tempora, repellat quam nulla eligendi temporibus ex unde impedit, voluptas a. Cum quisquam sed dolores ipsum atque dolorum voluptatibus natus adipisci placeat architecto magni perferendis explicabo aspernatur qui nobis ab doloribus totam tenetur repellat pariatur, nostrum saepe ex ducimus. Porro qui similique iste unde! Fuga rerum et harum veniam ipsam repellendus voluptatem sed hic dolorum? Est doloribus fugit pariatur? Expedita qui soluta officiis voluptatem doloremque voluptatibus mollitia adipisci sapiente? Dolores voluptate libero cumque tenetur optio consectetur ducimus saepe, corporis nam labore! Numquam nulla asperiores nam eveniet repellendus distinctio, reiciendis facere et, doloribus mollitia alias cupiditate vel? Suscipit qui excepturi, minima nulla exercitationem fugit laboriosam necessitatibus quam velit nemo esse a veniam repellat, praesentium dolore illum modi perferendis dignissimos neque odio dolorem facere. Deleniti consequuntur dolorem sequi ipsam, eveniet molestias dignissimos quia porro ea asperiores, distinctio tempore nemo, dolor totam est? Excepturi numquam, blanditiis harum soluta tempora pariatur rem ipsam quam.
+    </div>
   )
 }
 

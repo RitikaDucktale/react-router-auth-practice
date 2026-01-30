@@ -9,7 +9,7 @@ const Navbar = () => {
             <NavLink style={({isActive})=>{
             if(isActive) return {color:'rgb(9, 69, 201)'};
             else return {color:'black'};
-          }} to='/dashboard/home'>Home</NavLink>
+          }} to='/dashboard'>Home</NavLink>
           </li>
 
           <li>
