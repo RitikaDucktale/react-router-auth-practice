@@ -1,6 +1,7 @@
-import React from 'react'
 import ReactLogo from '../../assets/react.svg'
+
 import styles from "./Logo.module.css";
+
 const Logo = () => {
   return (
     <div className={styles.container}>

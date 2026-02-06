@@ -1,8 +1,11 @@
-import styles from "./Footer.module.css";
+import { NavLink } from "react-router-dom";
+
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
 import instagram from "../../assets/instagram.png";
-import { NavLink } from "react-router-dom";
+
+import styles from "./Footer.module.css";
+
 const Footer = () => {
   return (
     <footer className={styles.container}>

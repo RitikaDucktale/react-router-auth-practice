@@ -1,8 +1,9 @@
 import styles from "./UserCards.module.css"
 
-const UserCards = (props)=>{
-    const {user} = props || {};
-    console.log("UserCards==",user)
+const UserCards = ({user})=>{
+    console.log('USerCArds renders*******')
+    console.log(user,"UserCards==")
+    
     return(
         <div className={styles.card}>
             <div className={styles.cardTop}>

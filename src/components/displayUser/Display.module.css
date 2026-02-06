@@ -1,0 +1,16 @@
+.cardsContainer {
+  display: grid;
+  box-shadow: 1px 1px 6px 4px rgb(32, 32, 34); 
+  border-radius: 10px;
+  height: 400px;
+  /* min-height: 500px; */
+  margin: 10px;
+  padding: 1em;
+  gap: 20px;
+  overflow-y: scroll;
+  scrollbar-color: rgb(14, 13, 13);
+  /* scrollbar-width: none; */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+                                                 
+

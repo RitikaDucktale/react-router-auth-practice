@@ -1,66 +1,82 @@
-import { Outlet } from 'react-router-dom';
-import { useEffect,useContext,createContext, useState } from 'react';
-import { Button } from '@mui/material';
-import { Suspense,lazy } from 'react';
-import api from '../../apis/axios';
-import Loader from '../../components/loader/Loader';
+import { useEffect, useState } from "react";
+import { Suspense, lazy } from "react";
 
-import fetchRandomUser from '../../apis/userApi';
+import { Outlet } from "react-router-dom";
+import { Button } from "@mui/material";
+
+import fetchRandomUser from "../../apis/userApi";
+import { useUserContext } from "../../context/UserContext";
+import Loader from "../../components/loader/Loader";
+const DisplayUsers = lazy(
+  () => import("../../components/displayUser/DisplayUsers"),
+);
+
 import styles from "./Users.module.css";
-// import DisplayUsers from './DisplayUsers';
 
-const DisplayUsers = lazy(()=> import('./DisplayUsers'))
 const Users = () => {
-  const DataContext = createContext();
-const [users,setUsers] = useState([]);
-const [isLoading,setLoading] = useState(false);
+  console.log('USers jsx renders******')
+  const { users, setUsers, isLoading, setLoading } = useUserContext(); //userContext state for storing users
 
-console.log('users====',users)
-    useEffect(()=>{
-      const getUser = async ()=>{
-        try{
-          // setLoading(true)
-       const res = await fetchRandomUser()
-         console.log("Api data===",res.data.results)
-         const user = res.data.results;
-         console.log("user",user)
-         setUsers((prev)=>{
-          return [...prev,...user];
-         });
-        //  setLoading(false)
-        }catch(err){
-          console.log(err)
-        }
+  console.log("users====", users);
+  useEffect(()=>{
+    console.log("USeEffect runs")
+    const getUser = async ()=>{
+      try{
+        setLoading(true)
+     const res = await fetchRandomUser()
+       console.log("Api data===",res.data.results)
+       const user = res.data.results;
+       console.log("user",user)
+       setUsers((prev)=>{
+        return [...prev,...user];
+       });
+       setLoading(false)
+      }catch(err){
+        console.log(err)
       }
-      getUser();
-    },[])
+    }
+    getUser();
+  },[])
 
-    const onclickHandler = async ()=>{
-        try{
-           setLoading(true)
-        const res = await fetchRandomUser()
-         console.log("Api data===",res)
-         const user = res.data.results;
-         console.log("user",user)
-         setUsers((prev)=>{
-          return [...prev,...user];
-          })
-           setLoading(false)
-        }catch(err){
-          console.log(err)
-        }
-      }
+  const onclickHandler = async () => {
+    try {
+      setLoading(true);
+      const res = await fetchRandomUser();
+      console.log("Api data===", res);
+      const user = res.data.results;
+      console.log("user", user);
+      setUsers((prev) => {
+        return [...prev, ...user];
+      });
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
-     <div className={styles.outerContainer}>
-     <Button variant='contained' onClick={onclickHandler} style={{position:'sticky',top:70,marginTop:5}}>Load User</Button>
-         <Suspense fallback={<Loader/>}>
-          {/* {isLoading? <Loader/>:} */}
-         
-          {isLoading? <Loader/> :<DisplayUsers users={users} isLoading={isLoading} setLoading={setLoading}/>}
-         </Suspense>
-    </div>
-  )
-}
+    <>
+      <div className={styles.outerContainer}>
+        <Suspense fallback={<Loader />}>
+            {isLoading? <Loader />:""} 
+             <DisplayUsers />
+        </Suspense>
+      </div>
+      <Button
+        variant="contained"
+        onClick={onclickHandler}
+        style={{
+          width: 200,
+          height: 30,
+          alignSelf: "center",
+          marginBottom: 10,
+          padding: 20,
+        }}
+      >
+        Load User
+      </Button>
+    </>
+  );
+};
 
-export default Users
+export default Users;

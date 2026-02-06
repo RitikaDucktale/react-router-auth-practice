@@ -1,0 +1,29 @@
+.sectionContainer {
+  height: 70vh;
+  margin: 10px;
+  overflow-y: scroll;
+}
+
+.section {
+  height: 100vh;
+  opacity: 0.7;
+  transform: scale(0.95);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.section.transit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 10px;
+}

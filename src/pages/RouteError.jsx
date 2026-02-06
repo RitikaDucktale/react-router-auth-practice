@@ -1,6 +1,8 @@
-import { replace, useNavigate, useRouteError } from "react-router-dom";
+import { useNavigate, useRouteError } from "react-router-dom";
 import {Button} from '@mui/material'
+
 import styles from "./all.module.css"
+
 const RouteError = ()=>{
     const error = useRouteError();
     const navigate = useNavigate();
